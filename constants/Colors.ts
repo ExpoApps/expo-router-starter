@@ -11,7 +11,8 @@ export default {
     tint: tintColorLight,
     tabIconDefault: lightGrey,
     tabIconSelected: tintColorLight,
-    navBgColor: white, //used for header and bottom tabs
+    tabBgColor: white,
+    headerBgColor: white, 
   },
   dark: {
     text: white,
@@ -19,7 +20,8 @@ export default {
     tint: tintColorDark,
     tabIconDefault: lightGrey,
     tabIconSelected: tintColorDark,
-    navBgColor: black,
+    tabBgColor: black,
+    headerBgColor: black,
   },
   lightColor: '#eee',
   darkColor: 'rgba(255,255,255,0.1)'
