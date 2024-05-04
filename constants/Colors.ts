@@ -11,6 +11,7 @@ export default {
     tabIconSelected: blue,
     tabBgColor: white,
     headerBgColor: white, 
+    seperator: '#eee',
   },
   dark: {
     text: white,
@@ -19,7 +20,6 @@ export default {
     tabIconSelected: blue,
     tabBgColor: black,
     headerBgColor: black,
+    seperator: 'rgba(255,255,255,0.1)',
   },
-  lightColor: '#eee',
-  darkColor: 'rgba(255,255,255,0.1)'
 };
