@@ -19,7 +19,7 @@ export default function TabLayout() {
   const { theme, setTheme } = useTheme();
 
   const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
+    setTheme(theme === 'dark' ? 'light' : theme === 'light' ? 'green' : 'dark');
   }
 
   return (

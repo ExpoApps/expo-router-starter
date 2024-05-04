@@ -5,8 +5,7 @@ import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect, useState } from 'react';
 
-import { useColorScheme } from '@/components/useColorScheme';
-import { ThemeContext } from '@/context/ThemeContext';
+import { ThemeContext, Theme } from '@/context/ThemeContext';
 import Colors from '@/constants/Colors';
 
 export {
@@ -47,8 +46,7 @@ export default function RootLayout() {
 }
 
 function RootLayoutNav() {
-  const colorScheme = useColorScheme();
-  const [theme, setTheme] = useState(colorScheme || 'light');
+  const [theme, setTheme] = useState<Theme>('light');
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
