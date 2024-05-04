@@ -29,6 +29,7 @@ export default function TabLayout() {
         tabBarInactiveTintColor: Colors[theme ?? 'light'].tabIconDefault,
         tabBarStyle: { backgroundColor: Colors[theme].tabBgColor },
         headerStyle: { backgroundColor: Colors[theme].headerBgColor },
+        headerTitleStyle: { color: Colors[theme].text },
         // Disable the static render of the header on web
         // to prevent a hydration error in React Navigation v6.
         headerShown: useClientOnlyValue(false, true),
