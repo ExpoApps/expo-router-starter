@@ -4,7 +4,6 @@ import { Tabs } from 'expo-router';
 import { Pressable } from 'react-native';
 
 import Colors from '@/constants/Colors';
-import { useColorScheme } from '@/components/useColorScheme';
 import { useClientOnlyValue } from '@/components/useClientOnlyValue';
 import { ThemeContext } from '@/context/ThemeContext';
 
@@ -17,7 +16,6 @@ function TabBarIcon(props: {
 }
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
   const { theme, setTheme } = useContext(ThemeContext);
 
   const toggleTheme = () => {
@@ -27,7 +25,8 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        tabBarActiveTintColor: Colors[theme ?? 'light'].tabIconSelected,
+        tabBarInactiveTintColor: Colors[theme ?? 'light'].tabIconDefault,
         tabBarStyle: { backgroundColor: Colors[theme].tabBgColor },
         headerStyle: { backgroundColor: Colors[theme].headerBgColor },
         // Disable the static render of the header on web
@@ -45,7 +44,7 @@ export default function TabLayout() {
                 <FontAwesome
                   name="info-circle"
                   size={25}
-                  color={Colors[colorScheme ?? 'light'].text}
+                  color={Colors[theme ?? 'light'].text}
                   style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
                 />
               )}
