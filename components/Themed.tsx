@@ -30,7 +30,7 @@ export function View(props: ViewProps) {
 export function Seperator(props: ViewProps) {
   const { ...otherProps } = props;
   const { theme } = useTheme();
-  const backgroundColor = Colors[theme].seperator;
+  const backgroundColor = Colors[theme].borderColor;
 
   return <DefaultView style={[{ backgroundColor }, styles.separator]} {...otherProps} />;
 }

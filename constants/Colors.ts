@@ -14,7 +14,13 @@ export default {
     tabIconSelected: blue,
     tabBgColor: white,
     headerBgColor: white, 
-    seperator: '#eee',
+    borderColor: '#D8D8D8',
+    calendar: {
+      backgroundColor: '#f3f3f3',
+      calendarBackground: '#fcfcfc',
+      selectedColor: blue,
+      arrowColor: blue,
+    }
   },
   dark: {
     text: white,
@@ -23,7 +29,13 @@ export default {
     tabIconSelected: blue,
     tabBgColor: black,
     headerBgColor: black,
-    seperator: 'rgba(255,255,255,0.1)',
+    borderColor: '#D8D8D8',
+    calendar: {
+      backgroundColor: '#0c0c0c',
+      calendarBackground: '#030303',
+      selectedColor: blue,
+      arrowColor: blue,
+    }
   },
   green: {
     text: black,
@@ -32,6 +44,12 @@ export default {
     tabIconSelected: darkBrown,
     tabBgColor: lightGreen,
     headerBgColor: darkGreen,
-    seperator: 'rgba(0,100,0,0.5)',
+    borderColor: '#D8D8D8',
+    calendar: {
+      backgroundColor: darkGreen,
+      calendarBackground: lightGreen,
+      selectedColor: blue,
+      arrowColor: blue,
+    }
   },
 };

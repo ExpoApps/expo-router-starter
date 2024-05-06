@@ -1,17 +1,13 @@
-import { Link } from 'expo-router';
-
-import { Text, View, Seperator } from '@/components/Themed';
 import { styles } from '../_styles';
+import { View, Text } from '@/components/Themed';
+import React from 'react'
 
-export default function TabOneScreen() {
+const index = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-      <Seperator />
-
-      <Link href="/modal">
-        <Text>Go to Modal</Text>
-      </Link>
+      <Text>index</Text>
     </View>
-  );
+  )
 }
+
+export default index
