@@ -4,7 +4,7 @@ import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect, useState } from 'react';
 
-import { useColorScheme } from '@/components/useColorScheme';
+import { useColorScheme } from '@/utils/useColorScheme';
 import { ThemeContext, Theme } from '@/context/ThemeContext';
 import Colors from '@/constants/Colors';
 
