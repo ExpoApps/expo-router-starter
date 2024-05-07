@@ -1,5 +1,5 @@
 import React from 'react';
-import FontAwesome from '@expo/vector-icons/FontAwesome';
+import Feather from '@expo/vector-icons/Feather';
 import { Tabs } from 'expo-router';
 import { Pressable } from 'react-native';
 
@@ -9,17 +9,17 @@ import { useTheme } from '@/context/ThemeContext';
 
 // You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
 function TabBarIcon(props: {
-  name: React.ComponentProps<typeof FontAwesome>['name'];
+  name: React.ComponentProps<typeof Feather>['name'];
   color: string;
 }) {
-  return <FontAwesome size={28} style={{ marginBottom: -3 }} {...props} />;
+  return <Feather size={28} style={{ marginBottom: -3 }} {...props} />;
 }
 
 export default function TabLayout() {
   const { theme, setTheme } = useTheme();
 
   const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : theme === 'light' ? 'green' : 'dark');
+    setTheme(theme === 'dark' ? 'light' : 'dark');
   }
 
   return (
@@ -34,10 +34,10 @@ export default function TabLayout() {
         // to prevent a hydration error in React Navigation v6.
         headerShown: useClientOnlyValue(false, true),
         headerRight: () => (
-          <Pressable onPress={toggleTheme}>
+          <Pressable onPress={toggleTheme}> 
             {({ pressed }) => (
-              <FontAwesome
-                name="info-circle"
+              <Feather
+                name={theme === 'dark' ? 'sun' : 'moon'}
                 size={25}
                 color={Colors[theme ?? 'light'].text}
                 style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
