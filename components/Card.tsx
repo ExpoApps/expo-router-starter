@@ -10,9 +10,9 @@ const Card = () => {
     <View style={styles.container}>
         <Image source={require('../assets/images/photos/ocean.jpg')} style={styles.image} />
         <View style={[{...styles.bottom, backgroundColor: colors.background }]}>
-            <Text>Fish</Text>
+            <Text style={{ fontSize: 18, fontWeight: 'bold' }}>Fish</Text>
             <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse in pretium ante. Maecenas finibus, sem in convallis tincidunt, elit enim mollis massa. </Text>
-            <View style={{ ...styles.bottom, flexDirection: 'row', justifyContent: 'flex-end' }}>
+            <View style={{ ...styles.bottom, backgroundColor: colors.background, flexDirection: 'row', justifyContent: 'flex-end' }}>
                 <Button />
                 <Button filled />
             </View>

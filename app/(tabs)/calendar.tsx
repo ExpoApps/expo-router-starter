@@ -4,10 +4,12 @@ import { styles } from '../_styles';
 import { View } from '@/components/Themed';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/context/ThemeContext';
+import { useColors } from '@/constants/Colors';
 
 const calendar = () => {
     const [selected, setSelected] = useState('');
     const { theme } = useTheme();
+    const colors = useColors();
     const { selectedColor } = Colors[theme].calendar;
 
     return (
@@ -15,13 +17,11 @@ const calendar = () => {
             <Calendar
                 key={theme}
                 style={{
-                    borderWidth: 1,
-                    borderColor: Colors[theme].borderColor,
-                    backgroundColor: Colors[theme].calendar.backgroundColor,
+                    backgroundColor: colors.background,
                 }}
                 theme={{
-                    calendarBackground: Colors[theme].calendar.calendarBackground,
-                    arrowColor: Colors[theme].calendar.arrowColor,
+                    calendarBackground: colors.header,
+                    arrowColor: colors.selected,
                     dayTextColor: Colors[theme].text,
                     textDisabledColor: Colors[theme].tabIconDefault,
                     monthTextColor: Colors[theme].text,
@@ -32,10 +32,10 @@ const calendar = () => {
                 }}
                 current={'2012-03-01'}
                 markedDates={{
-                    [selected]: {selected: true, disableTouchEvent: true, selectedColor: selectedColor},
-                    '2012-03-01': {selected: true, marked: true, selectedColor: selectedColor},
-                    '2012-03-02': {marked: true, selectedColor: selectedColor},
-                    '2012-03-03': {selected: true, selectedColor: selectedColor}
+                    [selected]: {selected: true, disableTouchEvent: true, selectedColor: colors.selected},
+                    '2012-03-01': {selected: true, marked: true, selectedColor: colors.selected},
+                    '2012-03-02': {marked: true, dotColor: colors.selected},
+                    '2012-03-03': {selected: true, selectedColor: colors.selected}
                 }}
             />
         </View>
