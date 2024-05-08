@@ -1,10 +1,14 @@
 import { View, StyleSheet } from 'react-native'
 import React from 'react'
 import { Text } from '@/components/Themed';
+import { useColors } from '@/constants/Colors';
 
 const Button = ({ filled }: { filled?: boolean }) => {
+  const color = useColors();
+
+
   return (
-    <View style={[styles.button, filled && styles.filled]}>
+    <View style={[styles.button, {borderColor: color.selected}, filled && {backgroundColor: color.selected}]}>
       <Text>Button</Text>
     </View>
   )
@@ -19,9 +23,6 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10,
         borderRadius: 15,
     },
-    filled: {
-      backgroundColor: 'red'
-    }
 });
 
 export default Button

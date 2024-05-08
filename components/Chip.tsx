@@ -1,10 +1,11 @@
 import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
+import { useColors } from '@/constants/Colors'
 
 const Chip = ({ text, selected }: { text: string, selected?: boolean }) => {
-
+  const colors = useColors();
   return (
-    <View style={[styles.container, selected && styles.selected]}>
+    <View style={[styles.container, selected && {backgroundColor: colors.selected} || {backgroundColor: colors.select}]}>
       <Text style={styles.text}>{text}</Text>
     </View>
   )
@@ -24,7 +25,4 @@ const styles = StyleSheet.create({
         color: 'white',
         fontWeight: 'bold',
     },
-    selected: {
-      backgroundColor: 'lightgray'
-    }
 })
