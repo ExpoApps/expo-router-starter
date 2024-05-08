@@ -1,5 +1,4 @@
-import { styles } from '../_styles';
-import { View, Text } from '@/components/Themed';
+import { View } from '@/components/Themed';
 import React from 'react'
 import Chip from '@/components/Chip';
 import Card from '@/components/Card';

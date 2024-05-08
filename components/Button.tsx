@@ -1,9 +1,10 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { View, StyleSheet } from 'react-native'
 import React from 'react'
+import { Text } from '@/components/Themed';
 
-const Button = () => {
+const Button = ({ filled }: { filled?: boolean }) => {
   return (
-    <View style={styles.button}>
+    <View style={[styles.button, filled && styles.filled]}>
       <Text>Button</Text>
     </View>
   )
@@ -12,11 +13,14 @@ const Button = () => {
 //creates a button stylesheet
 const styles = StyleSheet.create({
     button: {
-        backgroundColor: 'red',
+        borderWidth: 1,
+        borderColor: 'red',
         paddingVertical: 5,
         paddingHorizontal: 10,
         borderRadius: 15,
-        alignSelf: 'flex-end', 
+    },
+    filled: {
+      backgroundColor: 'red'
     }
 });
 

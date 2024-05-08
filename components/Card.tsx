@@ -1,8 +1,10 @@
-import { View, Text, Image, StyleSheet } from 'react-native'
+import { Image, StyleSheet } from 'react-native'
+import { View, Text } from '@/components/Themed';
 import React from 'react'
 import Button from './Button'
 
 const palette = {
+    primary95: 'rgb(246, 237, 255)',
     primary90: 'rgb(234, 221, 255)',
     primary80: 'rgb(208, 188, 255)',
     primary70: 'rgb(182, 157, 248)',
@@ -21,7 +23,10 @@ const Card = () => {
         <View style={styles.bottom}>
             <Text>Fish</Text>
             <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse in pretium ante. Maecenas finibus, sem in convallis tincidunt, elit enim mollis massa. </Text>
-            <Button />
+            <View style={{ ...styles.bottom, flexDirection: 'row', justifyContent: 'flex-end' }}>
+                <Button />
+                <Button filled />
+            </View>
         </View>
     </View>
   )
