@@ -10,13 +10,14 @@ const calendar = () => {
     const [selected, setSelected] = useState('');
     const { theme } = useTheme();
     const colors = useColors();
-    const { selectedColor } = Colors[theme].calendar;
 
     return (
-        <View style={styles.container}>
+        <View style={[styles.container, {height: 200}]}>
             <Calendar
                 key={theme}
                 style={{
+                    borderBottomWidth: 5,
+                    borderColor: colors.background,
                     backgroundColor: colors.background,
                 }}
                 theme={{
