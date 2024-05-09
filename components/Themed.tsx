@@ -25,11 +25,3 @@ export function View(props: ViewProps) {
   return <DefaultView style={[{ backgroundColor }, style]} {...otherProps} />;
 }
 
-export function Seperator(props: ViewProps) {
-  const { ...otherProps } = props;
-  const colors = useColors();
-  const backgroundColor = colors.header;
-
-  return <DefaultView style={[{ backgroundColor }, styles.separator]} {...otherProps} />;
-}
-
