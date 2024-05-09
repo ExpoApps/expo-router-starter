@@ -17,25 +17,25 @@ const black = '#000';
 }*/
 
 const darkColors = {
-  background: "#2F2F2F",
+  background: "#181818",
   header: "#111111", //brand
-  surface: "#414141",
+  surface: "#242424",
+  shadow: "#2B2B2B",  
+  text: white,
   brand: "#444444", //other
   select: "#666666", //accent 
   selected: "#757575", //brand
-  shadow: "#2B2B2B",  
-  text: white,
 }
 
 const lightColors = {
   background: "#F5F5F5",
   header: "#F0F0F0",
   surface: white,
+  shadow: "#BBBBBB",
+  text: black,
   brand: "#BDBDBD",
   select: "#9E9E9E",
   selected: "#BBBBBB",
-  shadow: "#BBBBBB",
-  text: black,
 }
 
 export function useColors() {

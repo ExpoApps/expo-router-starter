@@ -11,7 +11,7 @@ const calendar = () => {
     const colors = useColors();
 
     return (
-        <View style={[styles.container, {margin: 10}]}>
+        <View style={[styles.container, {padding: 10}]}>
             <Calendar
                 key={theme}
                 style={{

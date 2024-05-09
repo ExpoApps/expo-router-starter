@@ -28,8 +28,19 @@ export default function TabLayout() {
       screenOptions={{
         tabBarActiveTintColor: colors.selected,
         tabBarInactiveTintColor: colors.brand,
-        tabBarStyle: { backgroundColor: colors.surface },
-        headerStyle: { backgroundColor: colors.header },
+        tabBarStyle: { 
+          backgroundColor: colors.surface,
+          //remove shadow:
+          shadowColor: 'transparent',
+          elevation: 0, // for Android
+          shadowOpacity: 0, // for iOS
+          borderTopWidth: 0, // for web
+         },
+        headerStyle: { 
+          backgroundColor: colors.header,
+          borderBottomColor: colors.shadow,
+          borderBottomWidth: 1
+         },
         headerTitleStyle: { color: colors.text },
         // Disable the static render of the header on web
         // to prevent a hydration error in React Navigation v6.
@@ -59,13 +70,6 @@ export default function TabLayout() {
         options={{
           title: 'Calendar',
           tabBarIcon: ({ color }) => <TabBarIcon name="calendar" color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="two"
-        options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="inbox" color={color} />,
         }}
       />
     </Tabs>
