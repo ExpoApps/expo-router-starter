@@ -16,8 +16,8 @@ const calendar = () => {
                 key={theme}
                 style={{
                     borderBottomWidth: 5,
-                    borderColor: colors.background,
-                    backgroundColor: colors.background,
+                    borderColor: colors.surface,
+                    backgroundColor: colors.surface,
                 }}
                 theme={{
                     calendarBackground: colors.header,

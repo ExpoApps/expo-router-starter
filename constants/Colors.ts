@@ -17,9 +17,9 @@ const black = '#000';
 }*/
 
 const darkColors = {
-  bg: black,
+  background: black,
   header: "#111111",
-  background: "#222222",
+  surface: "#222222",
   brand: "#444444",
   select: "#666666",
   selected: "#757575",
@@ -27,9 +27,9 @@ const darkColors = {
 }
 
 const lightColors = {
-  bg: white,
+  background: white,
   header: "#F0F0F0",
-  background: "#E0E0E0",
+  surface: "#E0E0E0",
   brand: "#BDBDBD",
   select: "#9E9E9E",
   selected: "#BBBBBB",

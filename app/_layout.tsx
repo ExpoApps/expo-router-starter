@@ -48,15 +48,15 @@ export default function RootLayout() {
 function RootLayoutNav() {
   const colorScheme = useColorScheme();
   const [theme, setTheme] = useState<Theme>(colorScheme === 'dark' ? 'dark' : 'light');
-  const color = useColors();
+  const colors = useColors();
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
       <Stack
         screenOptions={{
-          headerStyle: { backgroundColor: color.header },
-          headerTitleStyle: { color: color.text },
-          headerTintColor: color.text,
+          headerStyle: { backgroundColor: colors.header },
+          headerTitleStyle: { color: colors.text },
+          headerTintColor: colors.text,
         }}
       >
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />

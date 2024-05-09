@@ -4,11 +4,11 @@ import { Text } from '@/components/Themed';
 import { useColors } from '@/constants/Colors';
 
 const Button = ({ filled }: { filled?: boolean }) => {
-  const color = useColors();
+  const colors = useColors();
 
 
   return (
-    <View style={[styles.button, {borderColor: color.selected}, filled && {backgroundColor: color.selected}]}>
+    <View style={[styles.button, {borderColor: colors.selected}, filled && {backgroundColor: colors.selected}]}>
       <Text>Button</Text>
     </View>
   )
