@@ -3,7 +3,6 @@ import Feather from '@expo/vector-icons/Feather';
 import { Tabs } from 'expo-router';
 import { Pressable } from 'react-native';
 
-import Colors from '@/constants/Colors';
 import { useClientOnlyValue } from '@/utils/useClientOnlyValue';
 import { useTheme } from '@/context/ThemeContext';
 import { useColors } from '@/constants/Colors';
@@ -28,10 +27,10 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: colors.selected,
-        tabBarInactiveTintColor: Colors[theme ?? 'light'].tabIconDefault,
+        tabBarInactiveTintColor: colors.brand,
         tabBarStyle: { backgroundColor: colors.header },
         headerStyle: { backgroundColor: colors.header },
-        headerTitleStyle: { color: Colors[theme].text },
+        headerTitleStyle: { color: colors.text },
         // Disable the static render of the header on web
         // to prevent a hydration error in React Navigation v6.
         headerShown: useClientOnlyValue(false, true),
@@ -41,7 +40,7 @@ export default function TabLayout() {
               <Feather
                 name={theme === 'dark' ? 'sun' : 'moon'}
                 size={25}
-                color={Colors[theme ?? 'light'].text}
+                color={colors.text}
                 style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
               />
             )}

@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { Calendar } from 'react-native-calendars';
 import { styles } from '../_styles';
 import { View } from '@/components/Themed';
-import Colors from '@/constants/Colors';
 import { useTheme } from '@/context/ThemeContext';
 import { useColors } from '@/constants/Colors';
 
@@ -23,10 +22,6 @@ const calendar = () => {
                 theme={{
                     calendarBackground: colors.header,
                     arrowColor: colors.selected,
-                    dayTextColor: Colors[theme].text,
-                    textDisabledColor: Colors[theme].tabIconDefault,
-                    monthTextColor: Colors[theme].text,
-                    textSectionTitleColor: Colors[theme].text,
                 }}
                 onDayPress={day => {
                     setSelected(day.dateString);
