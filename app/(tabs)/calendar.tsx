@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { Calendar } from 'react-native-calendars';
-import { styles } from '../_styles';
 import { View } from '@/components/Themed';
 import { useTheme } from '@/context/ThemeContext';
 import { useColors } from '@/constants/Colors';
+import { styles } from '../_styles';
 
 const calendar = () => {
     const [selected, setSelected] = useState('');
@@ -11,13 +11,15 @@ const calendar = () => {
     const colors = useColors();
 
     return (
-        <View style={[styles.container, {height: 200}]}>
+        <View style={[styles.container, {margin: 10}]}>
             <Calendar
                 key={theme}
                 style={{
-                    borderBottomWidth: 5,
                     borderColor: colors.surface,
                     backgroundColor: colors.surface,
+                    borderRadius: 10,
+                    borderBottomWidth: 1,
+                    borderBottomColor: colors.shadow,
                 }}
                 theme={{
                     calendarBackground: colors.header,
@@ -37,5 +39,6 @@ const calendar = () => {
         </View>
     );
 }
+
 
 export default calendar
