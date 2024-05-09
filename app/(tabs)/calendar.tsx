@@ -22,18 +22,18 @@ const calendar = () => {
                     borderBottomColor: colors.shadow,
                 }}
                 theme={{
-                    calendarBackground: colors.header,
-                    arrowColor: colors.selected,
+                    calendarBackground: colors.surface,
+                    arrowColor: colors.brand,
                 }}
                 onDayPress={day => {
                     setSelected(day.dateString);
                 }}
                 current={'2012-03-01'}
                 markedDates={{
-                    [selected]: {selected: true, disableTouchEvent: true, selectedColor: colors.selected},
-                    '2012-03-01': {selected: true, marked: true, selectedColor: colors.selected},
-                    '2012-03-02': {marked: true, dotColor: colors.selected},
-                    '2012-03-03': {selected: true, selectedColor: colors.selected}
+                    [selected]: {selected: true, disableTouchEvent: true, selectedColor: colors.gray},
+                    '2012-03-01': {selected: true, marked: true, selectedColor: colors.gray},
+                    '2012-03-02': {marked: true, dotColor: colors.gray},
+                    '2012-03-03': {selected: true, selectedColor: colors.gray}
                 }}
             />
         </View>

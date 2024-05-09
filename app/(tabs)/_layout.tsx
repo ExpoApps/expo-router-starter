@@ -6,6 +6,7 @@ import { Pressable } from 'react-native';
 import { useClientOnlyValue } from '@/utils/useClientOnlyValue';
 import { useTheme } from '@/context/ThemeContext';
 import { useColors } from '@/constants/Colors';
+import { Text } from '@/components/Themed';
 
 // You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
 function TabBarIcon(props: {
@@ -26,8 +27,8 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: colors.selected,
-        tabBarInactiveTintColor: colors.brand,
+        tabBarActiveTintColor: colors.brand,
+        tabBarInactiveTintColor: colors.gray,
         tabBarStyle: { 
           backgroundColor: colors.surface,
           //remove shadow:
@@ -37,7 +38,7 @@ export default function TabLayout() {
           borderTopWidth: 0, // for web
          },
         headerStyle: { 
-          backgroundColor: colors.header,
+          backgroundColor: colors.surface,
           borderBottomColor: colors.shadow,
           borderBottomWidth: 1
          },
@@ -62,6 +63,12 @@ export default function TabLayout() {
         name="index"
         options={{
           title: 'Tab One',
+          headerTitle: () => (<Text style={{
+            fontWeight: 'bold',
+            color: colors.brand,
+          }}>
+            App Title
+          </Text>),
           tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
         }}
       />
