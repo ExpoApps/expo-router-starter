@@ -19,19 +19,19 @@ const palette = {
 }
 
 const darkColors = {
-  header: palette.primary10,
-  background: palette.primary20,
-  brand: palette.primary30,
-  select: palette.primary40,
-  selected: palette.primary50,
+  header: "#111111",
+  background: "#222222",
+  brand: "#444444",
+  select: "#666666",
+  selected: "#757575",
 }
 
 const lightColors = {
-  header: palette.primary95,
-  background: palette.primary90,
-  brand: palette.primary80,
-  select: palette.primary70,
-  selected: palette.primary60,
+  header: "#F0F0F0",
+  background: "#E0E0E0",
+  brand: "#BDBDBD",
+  select: "#9E9E9E",
+  selected: "#BBBBBB",
 }
 
 export function useColors() {
