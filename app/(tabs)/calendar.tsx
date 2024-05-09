@@ -3,7 +3,6 @@ import { Calendar } from 'react-native-calendars';
 import { View } from '@/components/Themed';
 import { useTheme } from '@/context/ThemeContext';
 import { useColors } from '@/constants/Colors';
-import { styles } from '../_styles';
 
 const calendar = () => {
     const [selected, setSelected] = useState('');
@@ -11,7 +10,7 @@ const calendar = () => {
     const colors = useColors();
 
     return (
-        <View style={[styles.container, {padding: 10}]}>
+        <View style={[{flex: 1}, {padding: 10}]}>
             <Calendar
                 key={theme}
                 style={{
