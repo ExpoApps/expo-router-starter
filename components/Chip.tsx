@@ -1,4 +1,5 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native'
+import { View, Text } from '@/components/Themed';
 import React from 'react'
 import { useColors } from '@/constants/Colors'
 
@@ -6,7 +7,7 @@ const Chip = ({ text, selected }: { text: string, selected?: boolean }) => {
   const colors = useColors();
   return (
     <View style={[styles.container, selected && {backgroundColor: colors.selected} || {backgroundColor: colors.select}]}>
-      <Text style={styles.text}>{text}</Text>
+      <Text>{text}</Text>
     </View>
   )
 }
@@ -20,9 +21,5 @@ const styles = StyleSheet.create({
         paddingVertical: 5,
         borderRadius: 5,
         marginRight: 5,
-    },
-    text: {
-        color: 'white',
-        fontWeight: 'bold',
     },
 })

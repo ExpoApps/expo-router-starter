@@ -1,6 +1,6 @@
-import { View, StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native'
 import React from 'react'
-import { Text } from '@/components/Themed';
+import { View, Text } from '@/components/Themed';
 import { useColors } from '@/constants/Colors';
 
 const Button = ({ filled }: { filled?: boolean }) => {
@@ -18,10 +18,10 @@ const Button = ({ filled }: { filled?: boolean }) => {
 const styles = StyleSheet.create({
     button: {
         borderWidth: 1,
-        borderColor: 'red',
         paddingVertical: 5,
         paddingHorizontal: 10,
         borderRadius: 15,
+        backgroundColor: 'transparent',
     },
 });
 
