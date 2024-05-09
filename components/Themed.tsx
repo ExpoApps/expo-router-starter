@@ -22,6 +22,7 @@ export function View(props: ViewProps) {
   const { style, ...otherProps } = props;
   const colors = useColors();
   const backgroundColor = colors.background;
+  
   return <DefaultView style={[{ backgroundColor }, style]} {...otherProps} />;
 }
 

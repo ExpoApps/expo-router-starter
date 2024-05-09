@@ -6,7 +6,7 @@ import { useColors } from '@/constants/Colors';
 const Card = () => {
     const colors = useColors();
     return (
-        <View style={[styles.container, {borderColor: colors.shadow}]}>
+        <View style={[styles.container, {borderColor: colors.gray}]}>
             <Image source={require('../assets/images/photos/ocean.jpg')} style={styles.image} />
             <View style={[{...styles.bottom, backgroundColor: colors.surface }]}>
                 <Text style={{ fontSize: 18, fontWeight: 'bold' }}>Fish</Text>

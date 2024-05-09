@@ -39,7 +39,7 @@ export default function TabLayout() {
          },
         headerStyle: { 
           backgroundColor: colors.surface,
-          borderBottomColor: colors.shadow,
+          borderBottomColor: colors.gray,
           borderBottomWidth: 1
          },
         headerTitleStyle: { color: colors.text },

@@ -19,7 +19,7 @@ const calendar = () => {
                     backgroundColor: colors.surface,
                     borderRadius: 10,
                     borderBottomWidth: 1,
-                    borderBottomColor: colors.shadow,
+                    borderBottomColor: colors.gray,
                 }}
                 theme={{
                     calendarBackground: colors.surface,
