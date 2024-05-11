@@ -4,7 +4,6 @@
  */
 
 import { Text as DefaultText, View as DefaultView } from 'react-native';
-import { styles } from '@/app/_styles';
 import { useColors } from '@/constants/Colors';
 
 export type TextProps = DefaultText['props'];

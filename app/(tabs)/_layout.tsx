@@ -1,19 +1,19 @@
 import React from 'react';
-import Feather from '@expo/vector-icons/Feather';
-import { Tabs } from 'expo-router';
-import { Pressable } from 'react-native';
+import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { Tabs, Link } from 'expo-router';
 
 import { useClientOnlyValue } from '@/utils/useClientOnlyValue';
 import { useTheme } from '@/context/ThemeContext';
 import { useColors } from '@/constants/Colors';
 import { Text } from '@/components/Themed';
+import { Pressable } from 'react-native';
 
 // You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
 function TabBarIcon(props: {
-  name: React.ComponentProps<typeof Feather>['name'];
+  name: React.ComponentProps<typeof FontAwesome>['name'];
   color: string;
 }) {
-  return <Feather size={28} style={{ marginBottom: -3 }} {...props} />;
+  return <FontAwesome size={28} style={{ marginBottom: -3 }} {...props} />;
 }
 
 export default function TabLayout() {
@@ -23,6 +23,13 @@ export default function TabLayout() {
   const toggleTheme = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
   }
+
+  const Title = <Text style={{
+    fontWeight: 'bold',
+    color: colors.brand,
+  }}>
+    App Title
+  </Text>
 
   return (
     <Tabs
@@ -47,14 +54,16 @@ export default function TabLayout() {
         // to prevent a hydration error in React Navigation v6.
         headerShown: useClientOnlyValue(false, true),
         headerRight: () => (
-          <Pressable onPress={toggleTheme}> 
+          <Pressable> 
             {({ pressed }) => (
-              <Feather
-                name={theme === 'dark' ? 'sun' : 'moon'}
-                size={25}
-                color={colors.text}
-                style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
-              />
+              <Link href="/modal">
+                <FontAwesome
+                  name='cog'
+                  size={25}
+                  color={colors.text}
+                  style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
+                />
+              </Link>
             )}
           </Pressable>
         ),
@@ -62,20 +71,16 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Tab One',
-          headerTitle: () => (<Text style={{
-            fontWeight: 'bold',
-            color: colors.brand,
-          }}>
-            App Title
-          </Text>),
+          headerTitle: () => <>{Title}</>,
+          title: '',
           tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
         }}
       />
       <Tabs.Screen
         name="calendar"
         options={{
-          title: 'Calendar',
+          headerTitle: () => <>{Title}</>,
+          title: '',
           tabBarIcon: ({ color }) => <TabBarIcon name="calendar" color={color} />,
         }}
       />

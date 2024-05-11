@@ -1,16 +1,24 @@
-import { Image, StyleSheet } from 'react-native'
+import { Image, StyleSheet, Dimensions } from 'react-native'
 import { View, Text } from '@/components/Themed';
 import React from 'react'
 import { useColors } from '@/constants/Colors';
 
-const Card = () => {
+const screenHeight = Dimensions.get('window').height;
+
+interface CardProps {
+    imageSource?: string;
+    title?: string;
+    text?: string;
+}
+
+const Card: React.FC<CardProps> = ({ imageSource, title, text }) => {
     const colors = useColors();
     return (
         <View style={[styles.container, {borderColor: colors.gray}]}>
-            <Image source={require('../assets/images/photos/ocean.jpg')} style={styles.image} />
+            {imageSource && <Image source={{uri: imageSource}} style={styles.image} />}
             <View style={[{...styles.bottom, backgroundColor: colors.surface }]}>
-                <Text style={{ fontSize: 18, fontWeight: 'bold' }}>Fish</Text>
-                <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse in pretium ante. Maecenas finibus, sem in convallis tincidunt, elit enim mollis massa. </Text>
+                {title && <Text style={{ fontSize: 18, fontWeight: 'bold' }}>{title}</Text>}
+                {text && <Text>{text}</Text>}
             </View>
         </View>
     )
@@ -18,7 +26,6 @@ const Card = () => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
         borderRadius: 10,
         margin: 10,
         overflow: 'hidden',
@@ -26,7 +33,7 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
     },
     image: {
-        flex: 1,
+        height: screenHeight * 0.25,
         width: '100%',
     },
     bottom: {
