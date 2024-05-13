@@ -53,7 +53,6 @@ function RootLayoutNav() {
     <ThemeContext.Provider value={{ theme, setTheme, colorTheme, setColorTheme }}>
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
       </Stack>
     </ThemeContext.Provider>
   );

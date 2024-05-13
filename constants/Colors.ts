@@ -1,6 +1,6 @@
 import { useTheme } from "@/context/ThemeContext";
 
-const lightThemes = [
+export const lightThemes = [
   {
     name: 'neutral',
     colors: {
@@ -61,14 +61,19 @@ const darkColors = {
 }
 
 const lightColors = {
-  ...lightThemes[0].colors,
+  background: "#F5F5F5",
+  surface: "#FFFFFF",
   text: "#000000",
   gray: "#BBBBBB",
   brand: "orange",
 }
 
 export function useColors() {
-  const { theme } = useTheme();
-  return theme === 'dark' ? darkColors : lightColors
+  const { theme, colorTheme } = useTheme();
+  const themeColors = theme === 'dark' ? darkColors : {
+    ...lightColors,
+    ...lightThemes.find(t => t.name === colorTheme)?.colors,
+  };
+  return themeColors;
 }
 

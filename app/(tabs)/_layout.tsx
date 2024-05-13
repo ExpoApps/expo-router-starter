@@ -56,7 +56,7 @@ export default function TabLayout() {
         headerRight: () => (
           <Pressable> 
             {({ pressed }) => (
-              <Link href="/modal">
+              <Link href="/settings">
                 <FontAwesome
                   name='cog'
                   size={25}
