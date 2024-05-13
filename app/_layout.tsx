@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 
 import { useColorScheme } from '@/utils/useColorScheme';
 import { ThemeContext, Theme, ColorTheme } from '@/context/ThemeContext';
+import { useColors } from '@/constants/Colors';
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -48,10 +49,15 @@ function RootLayoutNav() {
   const colorScheme = useColorScheme();
   const [theme, setTheme] = useState<Theme>(colorScheme === 'dark' ? 'dark' : 'light');
   const [colorTheme, setColorTheme] = useState<ColorTheme>('neutral');
-
+  const colors = useColors();
+  
   return (
     <ThemeContext.Provider value={{ theme, setTheme, colorTheme, setColorTheme }}>
-      <Stack>
+      <Stack
+        screenOptions={() => ({
+          headerStyle: { backgroundColor: colors.surface },
+        })}
+      >
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       </Stack>
     </ThemeContext.Provider>

@@ -8,7 +8,7 @@ const index = () => {
       <Card 
         title='Title'
         text='This is a card with a title and text'
-        imageSource='../assets/images/photos/ocean.jpg'
+        imageSource='../../assets/images/photos/ocean.jpg'
       />
     </View>
   )
