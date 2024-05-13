@@ -3,7 +3,6 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Tabs, Link } from 'expo-router';
 
 import { useClientOnlyValue } from '@/utils/useClientOnlyValue';
-import { useTheme } from '@/context/ThemeContext';
 import { useColors } from '@/constants/Colors';
 import { Text } from '@/components/Themed';
 import { Pressable } from 'react-native';
@@ -17,12 +16,7 @@ function TabBarIcon(props: {
 }
 
 export default function TabLayout() {
-  const { theme, setTheme } = useTheme();
   const colors = useColors();
-
-  const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
-  }
 
   const Title = <Text style={{
     fontWeight: 'bold',

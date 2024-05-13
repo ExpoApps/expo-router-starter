@@ -52,6 +52,59 @@ export const lightThemes = [
   },
 ]
 
+
+export const darkThemes = [
+  {
+    name: 'neutral',
+    colors: {
+      background: "#181818",
+      surface: "#242424",
+    },
+  },
+  {
+    name: 'red',
+    colors: {
+      background: "#401818",
+      surface: "#602424",
+    },
+  },
+  {
+    name: 'green',
+    colors: {
+      background: "#184018",
+      surface: "#246024",
+    },
+  },
+  {
+    name: 'blue',
+    colors: {
+      background: "#181840",
+      surface: "#242460",
+    },
+  },
+  {
+    name: 'yellow',
+    colors: {
+      background: "#404018",
+      surface: "#606024",
+    },
+  },
+  {
+    name: 'purple',
+    colors: {
+      background: "#401840",
+      surface: "#602460",
+    },
+  },
+  {
+    name: 'cyan',
+    colors: {
+      background: "#184040",
+      surface: "#246060",
+    },
+  },
+]
+
 const darkColors = {
   background: "#181818",
   surface: "#242424",
@@ -70,7 +123,12 @@ const lightColors = {
 
 export function useColors() {
   const { theme, colorTheme } = useTheme();
-  const themeColors = theme === 'dark' ? darkColors : {
+  const themeColors = theme === 'dark' 
+  ? {
+    ...darkColors,
+    ...darkThemes.find(t => t.name === colorTheme)?.colors,
+  }
+  : {
     ...lightColors,
     ...lightThemes.find(t => t.name === colorTheme)?.colors,
   };
