@@ -5,8 +5,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import { useEffect, useState } from 'react';
 
 import { useColorScheme } from '@/utils/useColorScheme';
-import { ThemeContext, Theme } from '@/context/ThemeContext';
-import { useColors } from '@/constants/Colors';
+import { ThemeContext, Theme, ColorTheme } from '@/context/ThemeContext';
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -48,10 +47,10 @@ export default function RootLayout() {
 function RootLayoutNav() {
   const colorScheme = useColorScheme();
   const [theme, setTheme] = useState<Theme>(colorScheme === 'dark' ? 'dark' : 'light');
-  const colors = useColors();
+  const [colorTheme, setColorTheme] = useState<ColorTheme>('neutral');
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
+    <ThemeContext.Provider value={{ theme, setTheme, colorTheme, setColorTheme }}>
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="modal" options={{ presentation: 'modal' }} />

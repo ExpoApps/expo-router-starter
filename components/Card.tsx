@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
         width: '100%',
     },
     bottom: {
-        padding: 5,
+        padding: 15,
     },
 });
 
