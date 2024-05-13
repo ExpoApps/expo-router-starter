@@ -110,7 +110,7 @@ const darkColors = {
   surface: "#242424",
   text: "#FFFFFF",
   gray: "#555555", 
-  brand: "orange", 
+  brand: "#f4511e", 
 }
 
 const lightColors = {
@@ -118,7 +118,7 @@ const lightColors = {
   surface: "#FFFFFF",
   text: "#000000",
   gray: "#BBBBBB",
-  brand: "orange",
+  brand: "#f4511e",
 }
 
 export function useColors() {
